@@ -28,7 +28,9 @@ def sendEmail():
                 cutoff = i.index("@")#gets rid of the bit of the address after the @
                 receiverName=i[0:cutoff]
 
-                htmlTxt = templates.get_template(file_path).format(email=receiverName)
+                content = {"email":receiverName}#easier to add new required fields if the template was modified
+
+                htmlTxt = templates.get_template(file_path).format(**content)
                 message.attach(MIMEText(htmlTxt, "html"))
 
                 conn.sendmail(username, i, message.as_string())  # from, to, message
