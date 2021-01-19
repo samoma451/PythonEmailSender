@@ -7,7 +7,7 @@ def sendEmail():
     host = "smtp.gmail.com"
     port = 587
     username = "samoma451@gmail.com"
-    password = "definetlyMyPassword123"
+    password = "definitelyMyPassword123"
     file_path = "templates\email_message.html"
 
     try:
